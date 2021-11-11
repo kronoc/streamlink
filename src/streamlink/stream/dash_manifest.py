@@ -235,7 +235,8 @@ class MPD(MPDNode):
         self.availabilityStartTime = self.attr("availabilityStartTime", parser=MPDParsers.datetime,
                                                default=datetime.datetime.fromtimestamp(0, utc),  # earliest date
                                                required=self.type == "dynamic")
-        self.publishTime = self.attr("publishTime", parser=MPDParsers.datetime, required=self.type == "dynamic")
+#        self.publishTime = self.attr("publishTime", parser=MPDParsers.datetime, required=self.type == "dynamic")
+	self.publishTime = self.availabilityStartTime
         self.availabilityEndTime = self.attr("availabilityEndTime", parser=MPDParsers.datetime)
         self.mediaPresentationDuration = self.attr("mediaPresentationDuration", parser=MPDParsers.duration)
         self.suggestedPresentationDelay = self.attr("suggestedPresentationDelay", parser=MPDParsers.duration)
